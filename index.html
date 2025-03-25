@@ -1,182 +1,351 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <title>CL Traslados - Servicios de Transporte Turístico</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #333;
-        }
-        header {
-            background-color: #FFD700;
-            color: #000;
-            padding: 0.5rem 0;
-            text-align: center;
-        }
-        header img {
-           
-            top: 5px;
-            left: 5px;
-            height: 50%;
-            max-width: 50%;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #000;
-        }
-        nav a {
-            color: #FFD700;
-            padding: 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #333;
-        }
-        section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .destination {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 1rem;
-        }
-        .destination img {
-            max-width: 300px;
-            height: auto;
-            border-radius: 8px;
-            margin-right: 1rem;
-        }
-        .destination div {
-            flex: 1;
-        }
-        footer {
-            background-color: #000;
-            color: #FFD700;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        .float-wa{
-        position:fixed;
-        width:60px;
-        height:60px;
-        bottom:40px;
-        right:40px;
-        background-color:#25d366;
-        color:#FFF;
-        border-radius:50px;
-        text-align:center;
-        font-size:30px;
-        z-index:100;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <title>CL Traslados - Servicios de Transporte Turístico</title>
+  <style>
+    @media (max-width: 600px) {
+      ul {
+        transform: scale(0.6);
+      }
     }
-        .social-icons a {
-            margin: 0 1rem;
-            color: #FFD700;
-            text-decoration: none;
-        }
-        @media (max-width: 768px) {
-            .destination {
-                flex-direction: column;
-            }
-            .destination img {
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+
+    @media (min-width: 601px) and (max-width: 700px) {
+      ul {
+        transform: scale(0.7);
+      }
+    }
+
+    @media (min-width: 701px) and (max-width: 800px) {
+      ul {
+        transform: scale(0.8);
+      }
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+      display: grid;
+    }
+
+    .wrapper .button {
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      float: left;
+      margin: 0 5px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-out;
+    }
+
+    .wrapper .button:hover {
+      width: 200px;
+    }
+
+    .wrapper .button .icon {
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      text-align: center;
+      border-radius: 50px;
+      box-sizing: border-box;
+      line-height: 60px;
+      transition: all 0.3s ease-out;
+    }
+
+    .wrapper .button:nth-child(1):hover .icon {
+      background: #4267B2;
+    }
+
+    .wrapper .button:nth-child(2):hover .icon {
+      background: #1DA1F2;
+    }
+
+    .wrapper .button:nth-child(3):hover .icon {
+      background: #E1306C;
+    }
+
+    .wrapper .button:nth-child(4):hover .icon {
+      background: #333;
+    }
+
+    .wrapper .button:nth-child(5):hover .icon {
+      background: #ff0000;
+    }
+
+    .wrapper .button .icon i {
+      font-size: 25px;
+      line-height: 60px;
+      transition: all 0.3s ease-out;
+    }
+
+    .wrapper .button:hover .icon i {
+      color: #fff;
+    }
+
+    .wrapper .button span {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 60px;
+      margin-left: 10px;
+      transition: all 0.3s ease-out;
+    }
+
+    .wrapper .button:nth-child(1) span {
+      color: #4267B2;
+    }
+
+    .wrapper .button:nth-child(2) span {
+      color: #1DA1F2;
+    }
+
+    .wrapper .button:nth-child(3) span {
+      color: #E1306C;
+    }
+
+    .wrapper .button:nth-child(4) span {
+      color: #333;
+    }
+
+    .wrapper .button:nth-child(5) span {
+      color: #ff0000;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #FFD700;
+      color: #000;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+
+    header img {
+      height: auto;
+      /* Maintain aspect ratio */
+      max-height: 200px;
+      /* Set a fixed height for the logo */
+      max-width: 100%;
+      /* Ensure it doesn't exceed the header width */
+      display: block;
+      /* Center the image */
+      margin: 0 auto;
+      /* Center the image horizontally */
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+    }
+
+    nav a {
+      color: #FFD700;
+      padding: 1rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .destination {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+    }
+
+    .destination img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .destination div {
+      flex: 1;
+    }
+
+    footer {
+      background-color: #000;
+      color: #FFD700;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .float-wa {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .destination {
+        flex-direction: column;
+      }
+
+      .destination img {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <img src="logo.png" alt="CL Traslados Logo">
+  <header>
+    <img src="logo.png" alt="CL Traslados Logo">
+  </header>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#traslados">Traslados</a>
+    <a href="#acerca">Acerca de</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenidos a CL Traslados</h2>
+    <p>Explora los destinos más fascinantes de Argentina, Brasil y Paraguay con un servicio de traslado confiable y
+      personalizado.</p>
+  </section>
+
+  <section id="traslados">
+    <h2>Traslados Turísticos</h2>
+    <br>
+    <div class="destination">
+      <img src="cataratas_arg.jpg" alt="Cataratas Argentinas">
+      <div>
+        <h3>Cataratas Argentinas</h3>
+        <p>Disfruta de una experiencia inigualable en el Parque Nacional Iguazú, hogar de una de las Siete Maravillas
+          Naturales del Mundo. Senderos, pasarelas y la impresionante Garganta del Diablo te esperan.</p>
+      </div>
+    </div>
+    <div class="destination">
+      <img src="cataratas_brasil.jpg" alt="Cataratas Brasileras">
+      <div>
+        <h3>Cataratas Brasileras</h3>
+        <p>Contempla una vista panorámica espectacular de las Cataratas del Iguazú desde Brasil. Un recorrido ideal para
+          quienes buscan postales inolvidables y experiencias únicas.</p>
+      </div>
+    </div>
+    <div class="destination">
+      <img src="itaipu.jpg" alt="Represa Itaipú">
+      <div>
+        <h3>Represa Itaipú</h3>
+        <p>Conoce una de las mayores hidroeléctricas del mundo y maravíllate con su ingeniería colosal. Un sitio ideal
+          para quienes disfrutan de la tecnología y la naturaleza.</p>
+      </div>
+    </div>
+    <div class="destination">
+      <img src="minas_wanda.jpg" alt="Minas de Wanda">
+      <div>
+        <h3>Minas de Wanda</h3>
+        <p>Descubre el fascinante mundo de las piedras preciosas en Misiones. Un recorrido imperdible para quienes aman
+          la geología y las joyas naturales.</p>
+      </div>
+    </div>
+    <div class="destination">
+      <img src="hito_tres_fronteras.jpg" alt="Hito Tres Fronteras">
+      <div>
+        <h3>Hito Tres Fronteras</h3>
+        <p>Donde convergen Argentina, Brasil y Paraguay, este sitio emblemático ofrece vistas impresionantes de la unión
+          de los ríos Iguazú y Paraná.</p>
+      </div>
+    </div>
+    <div class="destination">
+      <img src="guira_oga.jpg" alt="Guira Oga">
+      <div>
+        <h3>Guira Oga</h3>
+        <p>Centro de rescate y rehabilitación de fauna silvestre. Aprende sobre la conservación de especies autóctonas
+          en este refugio natural.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="acerca">
+    <h2>Acerca de Mí</h2>
+    <p>Mi nombre es Cristian López, nacido y criado en Puerto Iguazú. Con años de experiencia en el transporte
+      turístico, conozco cada rincón de la región para brindarte la mejor experiencia posible. Mi prioridad es ofrecerte
+      un servicio seguro, cómodo y enriquecedor.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Redes Sociales</h2>
+    <br>
+    <div class="wrapper">
+      <div class="button">
+        <a href="https://www.facebook.com/share/18Stiv2gNT/" target="_blank">
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+          </div>
+          <span>Facebook</span>
+        </a>
+      </div>
+      <div class="button">
+        <a href="https://www.instagram.com/cl_trasladosiguazu?utm_source=qr&igsh=eHE1MzZqcGs3NjVr" target="_blank">
+          <div class="icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <span>Instagram</span>
+        </a>
+      </div>
+      <div class="button">
+        <a href="https://www.tiktok.com/@cl.traslados?_t=ZM-8uxRDr5Yene&_r=1" target="_blank">
+          <div class="icon">
+            <i class="fab fa-tiktok"></i>
+          </div>
+          <span>TikTok</span>
+        </a>
+      </div>
    
-    </header>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#traslados">Traslados</a>
-        <a href="#acerca">Acerca de Mí</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+    </div>
 
-    <section id="inicio">
-        <h2>Bienvenidos a CL Traslados</h2>
-        <p>Explora los destinos más fascinantes de Argentina, Brasil y Paraguay con un servicio de traslado confiable y personalizado.</p>
-    </section>
+  </section>
 
-    <section id="traslados">
-        <h2>Traslados Turísticos</h2>
-        <div class="destination">
-            <img src="cataratas_arg.jpg" alt="Cataratas Argentinas">
-            <div>
-                <h3>Cataratas Argentinas</h3>
-                <p>Disfruta de una experiencia inigualable en el Parque Nacional Iguazú, hogar de una de las Siete Maravillas Naturales del Mundo. Senderos, pasarelas y la impresionante Garganta del Diablo te esperan.</p>
-            </div>
-        </div>
-        <div class="destination">
-            <img src="cataratas_brasil.jpg" alt="Cataratas Brasileras">
-            <div>
-                <h3>Cataratas Brasileras</h3>
-                <p>Contempla una vista panorámica espectacular de las Cataratas del Iguazú desde Brasil. Un recorrido ideal para quienes buscan postales inolvidables y experiencias únicas.</p>
-            </div>
-        </div>
-        <div class="destination">
-            <img src="itaipu.jpg" alt="Represa Itaipú">
-            <div>
-                <h3>Represa Itaipú</h3>
-                <p>Conoce una de las mayores hidroeléctricas del mundo y maravíllate con su ingeniería colosal. Un sitio ideal para quienes disfrutan de la tecnología y la naturaleza.</p>
-            </div>
-        </div>
-        <div class="destination">
-            <img src="minas_wanda.jpg" alt="Minas de Wanda">
-            <div>
-                <h3>Minas de Wanda</h3>
-                <p>Descubre el fascinante mundo de las piedras preciosas en Misiones. Un recorrido imperdible para quienes aman la geología y las joyas naturales.</p>
-            </div>
-        </div>
-        <div class="destination">
-            <img src="hito_tres_fronteras.jpg" alt="Hito Tres Fronteras">
-            <div>
-                <h3>Hito Tres Fronteras</h3>
-                <p>Donde convergen Argentina, Brasil y Paraguay, este sitio emblemático ofrece vistas impresionantes de la unión de los ríos Iguazú y Paraná.</p>
-            </div>
-        </div>
-        <div class="destination">
-            <img src="guira_oga.jpg" alt="Guira Oga">
-            <div>
-                <h3>Guira Oga</h3>
-                <p>Centro de rescate y rehabilitación de fauna silvestre. Aprende sobre la conservación de especies autóctonas en este refugio natural.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="acerca">
-        <h2>Acerca de Mí</h2>
-        <p>Mi nombre es Cristian López, nacido y criado en Puerto Iguazú. Con años de experiencia en el transporte turístico, conozco cada rincón de la región para brindarte la mejor experiencia posible. Mi prioridad es ofrecerte un servicio seguro, cómodo y enriquecedor.</p>
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Solicita tu presupuesto hoy mismo.</p>
-        <p>Email: contacto@cltraslados.com</p>
-        <div class="social-icons">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-        </div>
-    </section>
-    <a href="https://wa.me/5493757676826?text=Hola Quiero mas informacion sobre traslados" class="float-wa" target="_blank">
-        <i class="fa fa-whatsapp" style="margin-top:16px;"></i>
-    </a>
-    <footer>
-        <p>&copy; 2025 IguazuSofware - Todos los derechos reservados.</p>
-    </footer>
+  <a href="https://wa.me/5493757676826?text=Hola Quiero mas informacion sobre traslados" class="float-wa"
+    target="_blank">
+    <i class="fa fa-whatsapp" style="margin-top:16px;"></i>
+  </a>
+  <footer>
+    <p>&copy; 2025 IguazuSofware - Todos los derechos reservados.</p>
+  </footer>
 </body>
+
 </html>
