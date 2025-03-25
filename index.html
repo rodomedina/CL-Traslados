@@ -26,105 +26,87 @@
       }
     }
 
-    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    @media (max-width: 768px) {
+      .destination {
+        flex-direction: column;
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      .destination img {
+        margin-bottom: 1rem;
+      }
     }
 
-    html,
-    body {
-      display: grid;
+    .social {
+      margin: 0 auto;
+      width: 500px;
+
+      padding: 50px;
     }
 
-    .wrapper .button {
-      display: inline-block;
-      height: 60px;
-      width: 60px;
-      float: left;
-      margin: 0 5px;
-      overflow: hidden;
-      background: #fff;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease-out;
-    }
+    [class^="icon-btn"]
 
-    .wrapper .button:hover {
-      width: 200px;
-    }
-
-    .wrapper .button .icon {
-      display: inline-block;
-      height: 60px;
-      width: 60px;
-      text-align: center;
-      border-radius: 50px;
-      box-sizing: border-box;
-      line-height: 60px;
-      transition: all 0.3s ease-out;
-    }
-
-    .wrapper .button:nth-child(1):hover .icon {
-      background: #4267B2;
-    }
-
-    .wrapper .button:nth-child(2):hover .icon {
-      background: #1DA1F2;
-    }
-
-    .wrapper .button:nth-child(3):hover .icon {
-      background: #E1306C;
-    }
-
-    .wrapper .button:nth-child(4):hover .icon {
-      background: #333;
-    }
-
-    .wrapper .button:nth-child(5):hover .icon {
-      background: #ff0000;
-    }
-
-    .wrapper .button .icon i {
-      font-size: 25px;
-      line-height: 60px;
-      transition: all 0.3s ease-out;
-    }
-
-    .wrapper .button:hover .icon i {
+    /*.icon-btn*/
+      {
+      height: 75px;
+      width: 75px;
+      border: 10;
       color: #fff;
-    }
-
-    .wrapper .button span {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 60px;
+      cursor: pointer;
+      font-size: 40px;
+      line-height: 75px;
+      transition: ease-in-out .3s;
+      border-radius: 50px;
       margin-left: 10px;
-      transition: all 0.3s ease-out;
+      background-color: #fff;
     }
 
-    .wrapper .button:nth-child(1) span {
-      color: #4267B2;
+    .twitter {
+      color: #4099FF;
     }
 
-    .wrapper .button:nth-child(2) span {
-      color: #1DA1F2;
+    .facebook {
+      color: #3B5998;
     }
 
-    .wrapper .button:nth-child(3) span {
-      color: #E1306C;
+    .google-plus {
+      color: #DB5A3C;
     }
 
-    .wrapper .button:nth-child(4) span {
-      color: #333;
+    .instagram {
+      color: #5C3D2E;
     }
 
-    .wrapper .button:nth-child(5) span {
-      color: #ff0000;
+    .github {
+      color: #4183C4;
+    }
+
+    .icon-btn:hover {
+      transform: scale(1.10);
+      color: #FFFFFF;
+    }
+
+    .twitter:hover {
+      background-color: #4099FF;
+    }
+
+    .facebook:hover {
+      background-color: #3B5998;
+    }
+
+    .google-plus:hover {
+      background-color: #DB5A3C;
+    }
+
+    .instagram:hover {
+      background-color: #5C3D2E;
+    }
+
+    .github:hover {
+      background-color: #4183C4;
+    }
+
+    a.link {
+      color: inherit;
     }
 
     body {
@@ -216,16 +198,6 @@
       font-size: 30px;
       z-index: 100;
     }
-
-    @media (max-width: 768px) {
-      .destination {
-        flex-direction: column;
-      }
-
-      .destination img {
-        margin-bottom: 1rem;
-      }
-    }
   </style>
 </head>
 
@@ -308,32 +280,20 @@
 
   <section id="contacto">
     <h2>Redes Sociales</h2>
-    <br>
-    <div class="wrapper">
-      <div class="button">
-        <a href="https://www.facebook.com/share/18Stiv2gNT/" target="_blank">
-          <div class="icon">
-            <i class="fab fa-facebook-f"></i>
-          </div>
-          <span>Facebook</span>
+    <div class="social">
+
+      <button class="icon-btn facebook">
+        <a class="link" href="https://www.facebook.com/share/18Stiv2gNT/" target="_blank">
+          <i class="fab fa-facebook"></i>
         </a>
-      </div>
-      <div class="button">
-        <a href="https://www.instagram.com/cl_trasladosiguazu?utm_source=qr&igsh=eHE1MzZqcGs3NjVr" target="_blank">
-          <div class="icon">
+        <button class="icon-btn instagram">
+          <a class="link" href="https://www.instagram.com/cl_trasladosiguazu?utm_source=qr&igsh=eHE1MzZqcGs3NjVr" target="_blank">
             <i class="fab fa-instagram"></i>
-          </div>
-          <span>Instagram</span>
-        </a>
-      </div>
-      <div class="button">
-        <a href="https://www.tiktok.com/@cl.traslados?_t=ZM-8uxRDr5Yene&_r=1" target="_blank">
-          <div class="icon">
-            <i class="fab fa-tiktok"></i>
-          </div>
-          <span>TikTok</span>
-        </a>
-      </div>
+          </a>
+          <button class="icon-btn github">
+            <a class="link" href="https://www.tiktok.com/@cl.traslados?_t=ZM-8uxRDr5Yene&_r=1" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
     </div>
   </section>
 
